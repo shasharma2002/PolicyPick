@@ -1,0 +1,166 @@
+{% extends 'basef.html' %}
+
+{% load static %}
+
+{% block title %}Life{% endblock %}
+
+{% block content %}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .close-btn {
+            background: #eee;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .plan-details {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .premium-section {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .benefits-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .benefits-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-compare, .btn-choose {
+            background: #1b5e20;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Life Insurance Plans</h1>
+            <button class="close-btn" onclick="closePage()">×</button>
+        </div>
+
+        <div class="plan-details">
+            <h2>Plan 1: Secure Life Coverage</h2>
+            <p class="description">This plan offers long-term security and financial protection for your loved ones.</p>
+            <div class="premium-section">
+                <div>
+                    <h3>Monthly & Annual Premium</h3>
+                    <p>$30,000</p>
+                </div>
+                <div>
+                    <h3>Benefits & Coverage</h3>
+                    <p>$500,000</p>
+                </div>
+            </div>
+            <div class="benefits-box">
+                <h3>Benefits & Coverage Details</h3>
+                <div class="benefits-item">Full Term Coverage</div>
+                <div class="benefits-item">Death Benefits</div>
+                <div class="benefits-item">Tax-Free Payout</div>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-compare" onclick="window.location.href='{% url 'lifedetail' %}'">View Details</button>
+            </div>
+        </div>
+
+        <div class="plan-details">
+            <h2>Plan 2: Family Protection Plan</h2>
+            <p class="description">Ensures your family's financial security with high coverage.</p>
+            <div class="premium-section">
+                <div>
+                    <h3>Monthly & Annual Premium</h3>
+                    <p>$40,000</p>
+                </div>
+                <div>
+                    <h3>Benefits & Coverage</h3>
+                    <p>$750,000</p>
+                </div>
+            </div>
+            <div class="benefits-box">
+                <h3>Benefits & Coverage Details</h3>
+                <div class="benefits-item">Full Term Coverage</div>
+                <div class="benefits-item">Accidental Death Benefits</div>
+                <div class="benefits-item">Low-Cost Premiums</div>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-compare" onclick="window.location.href='{% url 'lifedetail' %}'">View Details</button>
+            </div>
+        </div>
+
+        <div class="plan-details">
+            <h2>Plan 3: Ultimate Life Coverage</h2>
+            <p class="description">Premium life insurance with extended benefits.</p>
+            <div class="premium-section">
+                <div>
+                    <h3>Monthly & Annual Premium</h3>
+                    <p>$50,000</p>
+                </div>
+                <div>
+                    <h3>Benefits & Coverage</h3>
+                    <p>$1,000,000</p>
+                </div>
+            </div>
+            <div class="benefits-box">
+                <h3>Benefits & Coverage Details</h3>
+                <div class="benefits-item">Lifetime Coverage</div>
+                <div class="benefits-item">Investment Opportunities</div>
+                <div class="benefits-item">High Return Value</div>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-compare" onclick="window.location.href='{% url 'lifedetail' %}'">View Details</button>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

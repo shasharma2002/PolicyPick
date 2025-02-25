@@ -1,0 +1,113 @@
+{% extends 'basef.html' %}
+{% load static %}
+{% block title %}Health Detail{% endblock %}
+
+{% block content %}
+    <style>
+        .health-details-container {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .health-plans-container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .plan {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #fff;
+        }
+        .plan h2 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .premium {
+            font-size: 20px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .benefits {
+            margin: 15px 0;
+            padding: 10px;
+            background: #ecf0f1;
+            border-radius: 5px;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .btn-compare {
+            background: #2ecc71;
+            color: white;
+        }
+        .btn-select {
+            background: #2980b9;
+            color: white;
+        }
+
+        /* Footer fix - make sure to target the exact elements */
+        footer, footer p, footer div, footer span, footer a {
+            color: white !important;
+        }
+    </style>
+
+    <div class="health-details-container">
+        <div class="health-plans-container">
+            <h1>Health Insurance Plans</h1>
+
+            <div class="plan">
+                <h2>Basic Health Plan</h2>
+                <p class="premium">$10,000 / Year</p>
+                <div class="benefits">
+                    <p>✅ General Check-ups</p>
+                    <p>✅ Emergency Care</p>
+                    <p>✅ Limited Hospital Coverage</p>
+                </div>
+                <div class="buttons">
+                    <a href="#" class="btn btn-select" onclick="alert('You will be notified shortly.');">Choose This Plan</a>
+                </div>
+            </div>
+
+            <div class="plan">
+                <h2>Standard Health Plan</h2>
+                <p class="premium">$20,000 / Year</p>
+                <div class="benefits">
+                    <p>✅ All Basic Plan Benefits</p>
+                    <p>✅ Specialist Consultations</p>
+                    <p>✅ Maternity & Pediatric Care</p>
+                </div>
+                <div class="buttons">
+                    <a href="#" class="btn btn-select" onclick="alert('You will be notified shortly.');">Choose This Plan</a>
+                </div>
+            </div>
+
+            <div class="plan">
+                <h2>Premium Health Plan</h2>
+                <p class="premium">$50,000 / Year</p>
+                <div class="benefits">
+                    <p>✅ All Standard Plan Benefits</p>
+                    <p>✅ Dental & Vision Coverage</p>
+                    <p>✅ Worldwide Emergency Support</p>
+                </div>
+                <div class="buttons">
+                    <a href="#" class="btn btn-select" onclick="alert('You will be notified shortly.');">Choose This Plan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

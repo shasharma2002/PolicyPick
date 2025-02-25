@@ -1,0 +1,365 @@
+{% extends 'basef.html' %}
+
+{% load static %}
+
+{% block title %}Compare Plans{% endblock %}
+
+{% block content %}
+  <style>
+    /* All previous styles remain the same */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 2rem;
+      background-color: #f9fafb;
+    }
+
+    .card {
+      background: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      max-width: 72rem;
+      margin: 0 auto;
+    }
+
+    .card-header {
+      padding: 1.5rem 1.5rem 0.5rem;
+      text-align: center;
+    }
+
+    .card-title {
+      font-size: 1.875rem;
+      font-weight: bold;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .overflow-x-auto {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      padding: 1rem;
+      text-align: left;
+    }
+
+    th.plan-header {
+      border-left: 1px solid #e5e7eb;
+      text-align: center;
+    }
+
+    .plan-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .plan-name {
+      font-size: 1.125rem;
+      font-weight: bold;
+    }
+
+    .plan-description {
+      font-size: 0.875rem;
+      color: #4b5563;
+    }
+
+    .plan-price {
+      color: #2563eb;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .coverage-text {
+      font-size: 0.875rem;
+      color: #4b5563;
+    }
+
+    .coverage-amount {
+      font-weight: 600;
+    }
+
+    .category-header {
+      background-color: #f3f4f6;
+      padding: 0.75rem;
+      font-weight: 600;
+    }
+
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    td.feature-cell {
+      border-left: 1px solid #e5e7eb;
+      text-align: center;
+    }
+
+    .check-icon {
+      color: #16a34a;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .x-icon {
+      color: #dc2626;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .minus-icon {
+      color: #9ca3af;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .choose-button {
+      background-color: #15803d;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.5rem;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .choose-button:hover {
+      background-color: #166534;
+    }
+
+    .compare-button {
+      background-color: #dcfce7;
+      color: #15803d;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.5rem;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .compare-button:hover {
+      background-color: #bbf7d0;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      <h1 class="card-title">Insurance Plan Comparison</h1>
+    </div>
+    <div class="card-content">
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Features</th>
+              <th class="plan-header">
+                <div class="plan-info">
+                  <div class="plan-name">ABC Health Insurance</div>
+                  <div class="plan-description">Comprehensive health coverage with a focus on affordability</div>
+                  <div class="plan-price">$200/mo</div>
+                  <div class="coverage-text">Coverage up to</div>
+                  <div class="coverage-amount">$50,000</div>
+                </div>
+              </th>
+              <th class="plan-header">
+                <div class="plan-info">
+                  <div class="plan-name">Auto Insurance - Plan B</div>
+                  <div class="plan-description">Budget-friendly plan with essential coverage for vehicle damage and liability</div>
+                  <div class="plan-price">$90/mo</div>
+                  <div class="coverage-text">Coverage up to</div>
+                  <div class="coverage-amount">$20,000</div>
+                </div>
+              </th>
+              <th class="plan-header">
+                <div class="plan-info">
+                  <div class="plan-name">Ultimate Life Coverage</div>
+                  <div class="plan-description">Premium life insurance with extended benefits</div>
+                  <div class="plan-price">$50,000/mo</div>
+                  <div class="coverage-text">Coverage up to</div>
+                  <div class="coverage-amount">$1,000,000</div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="4" class="category-header">Main Benefits</td>
+            </tr>
+            <tr>
+              <td>Benefit 1</td>
+              <td class="feature-cell">Hospitalization Coverage</td>
+              <td class="feature-cell">Basic Collision Coverage</td>
+              <td class="feature-cell">Lifetime Coverage</td>
+            </tr>
+            <tr>
+              <td>Benefit 2</td>
+              <td class="feature-cell">Doctor Consultation Fees</td>
+              <td class="feature-cell">Third-Party Liability</td>
+              <td class="feature-cell">Investment Opportunities</td>
+            </tr>
+            <tr>
+              <td>Benefit 3</td>
+              <td class="feature-cell">Emergency Services</td>
+              <td class="feature-cell">Fire & Theft Protection</td>
+              <td class="feature-cell">High Return Value</td>
+            </tr>
+
+            <!-- Core Coverage Section -->
+            <tr>
+              <td colspan="4" class="category-header">Core Coverage</td>
+            </tr>
+            <tr>
+              <td>Basic Coverage</td>
+              <td class="feature-cell">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+              <td class="feature-cell">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+              <td class="feature-cell">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+            </tr>
+            <tr>
+              <td>Emergency Services</td>
+              <td class="feature-cell">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+              <td class="feature-cell">
+                <svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </td>
+              <td class="feature-cell">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+            </tr>
+            <tr>
+              <td>Long-term Coverage</td>
+              <td class="feature-cell">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+              <td class="feature-cell">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+              <td class="feature-cell">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+            </tr>
+
+            <!-- Additional Protection Section -->
+            <tr>
+              <td colspan="4" class="category-header">Additional Protection</td>
+            </tr>
+            <tr>
+              <td>Investment Benefits</td>
+              <td class="feature-cell">
+                <svg class="minus-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </td>
+              <td class="feature-cell">
+                <svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </td>
+              <td class="feature-cell">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+            </tr>
+            <tr>
+              <td>Tax Benefits</td>
+              <td class="feature-cell">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+              <td class="feature-cell">
+                <svg class="minus-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </td>
+              <td class="feature-cell">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+            </tr>
+            <tr>
+              <td>High Return Value</td>
+              <td class="feature-cell">
+                <svg class="minus-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </td>
+              <td class="feature-cell">
+                <svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </td>
+              <td class="feature-cell">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      </div>
+    </div>
+</body>
+
+{% endblock %}

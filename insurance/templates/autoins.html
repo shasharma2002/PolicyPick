@@ -1,0 +1,164 @@
+{% extends 'basef.html' %}
+
+{% load static %}
+
+{% block title %}Auto{% endblock %}
+
+{% block content %}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .plan-details {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .premium-section {
+            display: flex;
+            justify-content: space-between;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .benefits-box {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .benefits-item {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-compare {
+            background: #ff9800;
+            color: white;
+        }
+
+        .btn-choose {
+            background: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Auto Insurance Plans</h1>
+        </div>
+
+        <div class="plan-details">
+            <h2>Auto Insurance - Plan A</h2>
+            <p>Comprehensive coverage with roadside assistance and accident protection.</p>
+            <div class="premium-section">
+                <div>
+                    <h3>Monthly Premium</h3>
+                    <p>$120</p>
+                </div>
+                <div>
+                    <h3>Coverage</h3>
+                    <p>$30,000</p>
+                </div>
+            </div>
+            <div class="benefits-box">
+                <h3>Benefits</h3>
+                <div class="benefits-item">Collision & Theft Protection</div>
+                <div class="benefits-item">24/7 Roadside Assistance</div>
+                <div class="benefits-item">Liability Coverage</div>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-compare" onclick="window.location.href='{% url 'autodetail' %}'">View Details</button>
+            </div>
+        </div>
+
+        <div class="plan-details">
+            <h2>Auto Insurance - Plan B</h2>
+            <p>Budget-friendly plan with essential coverage for vehicle damage and liability.</p>
+            <div class="premium-section">
+                <div>
+                    <h3>Monthly Premium</h3>
+                    <p>$90</p>
+                </div>
+                <div>
+                    <h3>Coverage</h3>
+                    <p>$20,000</p>
+                </div>
+            </div>
+            <div class="benefits-box">
+                <h3>Benefits</h3>
+                <div class="benefits-item">Basic Collision Coverage</div>
+                <div class="benefits-item">Third-Party Liability</div>
+                <div class="benefits-item">Fire & Theft Protection</div>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-compare" onclick="window.location.href='{% url 'autodetail' %}'">View Details</button>
+            </div>
+        </div>
+
+        <div class="plan-details">
+            <h2>Auto Insurance - Plan C</h2>
+            <p>Premium plan with high coverage and additional benefits for maximum security.</p>
+            <div class="premium-section">
+                <div>
+                    <h3>Monthly Premium</h3>
+                    <p>$150</p>
+                </div>
+                <div>
+                    <h3>Coverage</h3>
+                    <p>$50,000</p>
+                </div>
+            </div>
+            <div class="benefits-box">
+                <h3>Benefits</h3>
+                <div class="benefits-item">Full Comprehensive Coverage</div>
+                <div class="benefits-item">Personal Injury Protection</div>
+                <div class="benefits-item">Rental Car Reimbursement</div>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-compare" onclick="window.location.href='{% url 'autodetail' %}'">View Details</button>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

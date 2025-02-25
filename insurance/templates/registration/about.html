@@ -1,0 +1,110 @@
+{% extends 'basef.html' %}
+
+{% load static %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+
+    <!-- About Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap items-center">
+                <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://th.bing.com/th/id/OIP.U2UDTSL9HObqDp2IVYgyLgHaE7?w=270&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Insurance Planning" class="rounded-lg shadow-lg" width="500"/>
+                </div>
+                <div class="w-full md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl font-bold mb-4">Your Path to Protection</h2>
+                    <p class="text-gray-600 mb-6">
+                        InsureChoice Pro revolutionizes how you select insurance plans. Our advanced simulation technology helps you understand exactly how different insurance plans perform in real-world scenarios, ensuring you make an informed decision that fits your budget and lifestyle.
+                    </p>
+                    <p class="text-gray-600">
+                        Whether you're looking for health, auto, or life insurance, our interactive platform provides clear comparisons and realistic scenarios to demonstrate the true value of each plan option.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">How Our Platform Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Real-World Simulations</h3>
+                    <p class="text-gray-600">Experience how different plans perform in various scenarios, from minor incidents to major emergencies</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Plan Comparison Tool</h3>
+                    <p class="text-gray-600">Compare multiple insurance options side by side, analyzing premiums, coverage, and benefits</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Budget Optimization</h3>
+                    <p class="text-gray-600">Find the perfect balance between coverage and cost with our smart budget analysis tools</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Success Stories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="{% static 'pic1.jpeg' %}" alt="Customer" class="w-24 h-24 rounded-full object-cover"/>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Emily Martinez</h4>
+                            <div class="flex text-yellow-400">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The simulation helped me understand exactly what coverage I needed. When I had a car accident, my insurance plan performed exactly as the platform had demonstrated."</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="{% static 'pic2.jpeg' %}" alt="Customer" class="w-24 h-24 rounded-full object-cover"/>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">David Chen</h4>
+                            <div class="flex text-yellow-400">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The comparison tool saved me hours of research. I found a health insurance plan that offered better coverage for my family while staying within our budget."</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="{% static 'pic3.jpeg' %}" alt="Customer" class="w-24 h-24 rounded-full object-cover"/>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Rachel Thompson</h4>
+                            <div class="flex text-yellow-400">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Running different scenarios helped me understand the true value of each life insurance option. I feel confident knowing my family is properly protected."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
